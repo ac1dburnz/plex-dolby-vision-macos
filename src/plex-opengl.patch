@@ -1,0 +1,13 @@
+diff --git a/video/out/gpu_next/libmpv_gl_pl.c b/video/out/gpu_next/libmpv_gl_pl.c
+index 95a642f..84d774b 100644
+--- a/video/out/gpu_next/libmpv_gl_pl.c
++++ b/video/out/gpu_next/libmpv_gl_pl.c
+@@ -198,7 +198,7 @@ static void destroy(struct libmpv_gpu_next_context *ctx)
+ }
+ 
+ const struct libmpv_gpu_next_context_fns libmpv_gpu_next_context_gl = {
+-    .api_name = MPV_RENDER_API_TYPE_OPENGL_NEXT,
++    .api_name = MPV_RENDER_API_TYPE_OPENGL, /* Plex compatibility: select gpu-next for the standard render API. */
+     .init = init,
+     .wrap_fbo = wrap_fbo,
+     .done_frame = done_frame,
